@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- ScrollView with Content -->
+    <ScrollView
+        android:id="@+id/oldscrollview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navgation"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Header Section -->
+
+            <!-- Search View -->
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/searchView"
+                android:layout_width="364dp"
+                android:layout_height="56dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/search_view_background"
+                android:gravity="left"
+                android:queryHint="Search for items"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="23dp">
+
+                <TextView
+                    android:id="@+id/textView35"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Search"
+                    android:textAlignment="inherit"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+            </androidx.appcompat.widget.SearchView>
+
+            <LinearLayout
+                android:id="@+id/linlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+                android:scrollbarThumbHorizontal="@color/white"
+                android:scrollbarThumbVertical="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/searchView">
+
+                <!-- Add CardView to wrap the ConstraintLayout -->
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout2"
+                    android:layout_width="400dp"
+                    android:layout_height="187dp"><![CDATA[>
+
+
+
+
+
+                    ]]>
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Category"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.095"
+                        tools:layout_editor_absoluteX="16dp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="410dp"
+                        android:layout_height="149dp"
+                        app:layout_constraintTop_toBottomOf="@+id/textView5"
+                        tools:layout_editor_absoluteX="0dp"
+                        tools:listitem="@layout/categoryview" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView58"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:text="Popular Products "
+                        android:textColor="#2196F3"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/recyclerViewpopv"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="1.0"
+                        tools:layout_editor_absoluteX="16dp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewpopv"
+                        android:layout_width="407dp"
+                        android:layout_height="561dp"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        app:spanCount="2"
+                        tools:layout_editor_absoluteX="2dp"
+                        tools:layout_editor_absoluteY="43dp"
+                        tools:listitem="@layout/activity_home_details" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+            <!-- Latest Item Section -->
+
+            <!-- Latest Item RecyclerView (as Grid) -->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <!-- Bottom Navigation View -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navgation"
+        android:layout_width="410dp"
+        android:layout_height="66dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/blue"
+        app:itemBackground="@color/grey"
+        app:itemIconTint="@drawable/nav_item_colour_selected"
+        app:labelVisibilityMode="unlabeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
